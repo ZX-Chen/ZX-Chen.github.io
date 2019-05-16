@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>flex布局 | Gridea</title>
+<title>构造器模式 | Gridea</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -97,24 +97,63 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">flex布局</h2>
-            <div class="post-date">2019-05-15</div>
+            <h2 class="post-title">构造器模式</h2>
+            <div class="post-date">2019-05-16</div>
             
             <div class="post-content">
-              <h3 id="flex布局">flex布局</h3>
+              <p><strong>对象构造器是被用来创建特殊类型的对象的，首先它要准备使用的对象，其次在对象初次被创建时，通过接收参数，构造器要用来对成员的属性和方法进行赋值。</strong></p>
+<h3 id="对象创建"><strong>对象创建</strong></h3>
 <ul>
-<li>相关属性说明：
-<code>flex-direction: row/column</code></li>
+<li>创建对象的三种基本方式，每一种都会创建一个新对象：</li>
 </ul>
+<pre><code>var newObject = {};
+
+// or
+var newObject = Object.create( null );
+
+// or
+var newObject = new Object();
+</code></pre>
+<h3 id="使用原型的构造器"><strong>使用“原型”的构造器</strong></h3>
+<ul>
+<li>在Javascript中函数有一个prototype的属性。当我们调用Javascript的构造器创建一个对象时，构造函数prototype上的属性对于所创建的对象来说都看见。照这样，就可以创建多个访问相同prototype的Car对象了。</li>
+</ul>
+<pre><code>function Car( model, year, miles ) {
+  this.model = model;
+  this.year = year;
+  this.miles = miles;
+}
+
+// 注意这里我们使用Note here that we are using Object.prototype.newMethod 而不是
+// Object.prototype ，以避免我们重新定义原型对象
+Car.prototype.toString = function () {
+  return this.model + &quot; has done &quot; + this.miles + &quot; miles&quot;;
+};
+
+// 使用:
+var civic = new Car( &quot;Honda Civic&quot;, 2009, 20000 );
+var mondeo = new Car( &quot;Ford Mondeo&quot;, 2010, 5000 );
+
+console.log( civic.toString() );
+console.log( mondeo.toString() );
+</code></pre>
 
             </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://ZX-Chen.github.io/tag/gRhVvRIyF" class="tag">
+                    学习javascript设计模式
+                  </a>
+                
+              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://ZX-Chen.github.io/post/xia-zai-di-zhi">
+                <a href="https://ZX-Chen.github.io/post/flex-bu-ju">
                   <h3 class="post-title">
-                    下载地址
+                    flex布局
                   </h3>
                 </a>
               </div>
