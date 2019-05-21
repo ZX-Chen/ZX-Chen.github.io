@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>第1天笔记 | Gridea</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ZX-Chen.github.io/favicon.ico?v=1558444572899">
+<link rel="stylesheet" href="https://ZX-Chen.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://ZX-Chen.github.io">
+        <img src="https://ZX-Chen.github.io/images/avatar.png?v=1558444572899" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">第1天笔记</h2>
+            <div class="post-date">2019-05-20</div>
+            
+            <div class="post-content">
+              <h3 id="学习的思维导图">学习的思维导图</h3>
+<p><img src="https://ZX-Chen.github.io/post-images/1558444564251.png" alt=""></p>
+<h3 id="1-浏览器的分类和内核">1. 浏览器的分类和内核</h3>
+<table>
+<thead>
+<tr>
+<th>浏览器名称</th>
+<th>浏览器内核</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft Edge、IE（微软）</td>
+<td>Trident</td>
+</tr>
+<tr>
+<td>Firefox（火狐）</td>
+<td>Gecko</td>
+</tr>
+<tr>
+<td>Google Chrome（谷歌）</td>
+<td>Blink</td>
+</tr>
+<tr>
+<td>Safari（苹果）</td>
+<td>Webkit</td>
+</tr>
+<tr>
+<td>Opera（欧朋）</td>
+<td>Blink，早期为 Presto</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>说明：</strong></p>
+<ul>
+<li>浏览器的内核相当于汽车的发动机，负责将代码转换成用户眼中的界面</li>
+<li>浏览器市场份额：<a href="https://tongji.baidu.com/data/browser">https://tongji.baidu.com/data/browser</a>。其中，Google Chrome浏览器占据的市场份额最大</li>
+<li>国内的浏览器，如QQ浏览器（Blink）、360浏览器（Blink、Trident）和UC浏览器（Webkit、Trident）等，均是采用上述浏览器的内核。</li>
+</ul>
+<hr>
+<h3 id="2-web标准">2. Web标准</h3>
+<p><strong>制定标准的原因：不同的浏览器对应不同的工作原理与解析方法，那么就会出现差别，为了解决这种矛盾，需要制定一套标准来规范Web的开发。</strong></p>
+<ul>
+<li>网页的结构（.html），负责网页的内容整理和分类，是网页的骨架</li>
+<li>网页的样式（.css），负责设置网页的板式、颜色和文字大小</li>
+<li>网页的行为（.js），负责网页的动态交互效果</li>
+</ul>
+<h4 id="21-html骨架">2.1 HTML骨架</h4>
+<p><strong>HTML：Hyper Text Markup Language，超文本标记语言</strong></p>
+<p>作用：主要是通过HTML标签对网页的文本、图片和音频等内容进行描述。
+HTML有固定的基本格式：</p>
+<pre><code>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;网页标题&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		网页的主要内容
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="211-html标签的分类">2.1.1 HTMl标签的分类</h5>
+<p>双标签 ：<code>&lt;div&gt;&lt;/div&gt;</code>
+单标签 ：<code>&lt;br/&gt;、&lt;hr/&gt;、&lt;img/&gt;</code>，均属于功能性标签</p>
+<p>说明：标签之间存在嵌套关系和并列关系</p>
+<h5 id="212-基本骨架说明">2.1.2 基本骨架说明</h5>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><code>&lt;!DOCTYPE html&gt;</code>：用于告知浏览器当前使用的HTML版本，解析时需要使用相应版本的HTML</p>
+<p><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code>：用于指定当前编码和解码的标准</p>
+<h4 id="22-标签学习">2.2 标签学习</h4>
+<p>（1）标题标签：header，权重从h1-h6依次递减，也属于字体格式化标签</p>
+<pre><code>    &lt;h1&gt;一级标题&lt;/h1&gt;
+    &lt;h2&gt;二级标题&lt;/h2&gt;
+    &lt;h3&gt;三级标题&lt;/h3&gt;
+    &lt;h4&gt;四级标题&lt;/h4&gt;
+    &lt;h5&gt;五级标题&lt;/h5&gt;
+    &lt;h6&gt;六级标题&lt;/h6&gt;
+</code></pre>
+<p>（2）段落标签：paragraph，<code>&lt;p&gt;&lt;/p&gt;</code> 用于包裹一段文本</p>
+<pre><code>    &lt;p&gt;我爱我的祖国&lt;/p&gt;
+</code></pre>
+<p>（3）水平线标签：horizontal，<code>&lt;hr/&gt;</code></p>
+<p>（4）换行标签：break，<code>&lt;br/&gt;</code>，由于在html中直接换行是不会在网页中显示出来，需要使用换行标签来实现换行的效果</p>
+<p>（5）字体格式化标签</p>
+<ul>
+<li>文字倾斜：em、i</li>
+<li>文字加粗：strong（常用于强调某些文字）、b</li>
+<li>贯穿线（删除线）：del、s</li>
+<li>下划线：ins、u</li>
+</ul>
+<p>说明：语义化的标签便于搜索引擎（谷歌搜索、百度搜索等）识别相应的内容，如果网页的语义更好，那么这个网页在搜索引擎中的排名也就靠前。搜索引擎不关注具体的样式及视觉效果，而是关注标签本身的语义化。所以，推荐使用语义化强的标签， <strong>em、strong、del 和 ins 标签</strong>。</p>
+<p>如下所示：</p>
+<pre><code>    &lt;em&gt;公元221年&lt;/em&gt;
+    &lt;i&gt;公元221年&lt;/i&gt;
+
+    &lt;strong&gt;自信&lt;/strong&gt;
+    &lt;b&gt;自信&lt;/b&gt;
+
+    &lt;del&gt;原价：998&lt;/del&gt;
+    &lt;s&gt;原价：998&lt;/s&gt;
+    
+    &lt;ins&gt;汉朝&lt;/ins&gt;
+    &lt;u&gt;汉朝&lt;/u&gt;
+</code></pre>
+<p>（6）图片标签</p>
+<p><code>&lt;img src=&quot;图片的路径&quot; alt=&quot;替换图片的说明文本&quot; title=&quot;图片标题&quot;&gt;</code></p>
+<p>属性：</p>
+<ul>
+<li>
+<p>src：图片的路径，可以为相对路径、绝对路径、网络地址</p>
+</li>
+<li>
+<p>alt：当图片加载失败时，用文字说明代替图片</p>
+</li>
+<li>
+<p>title：当鼠标移动到图片上方后显示的标题</p>
+</li>
+<li>
+<p>width（宽度）、height（高度）、border（边框）</p>
+</li>
+<li>
+<p>style：样式属性，包含width（宽度）、height（高度）、border（边框）</p>
+</li>
+</ul>
+<p>（7）链接标签</p>
+<p><code>&lt;a href=&quot;链接的地址&quot; target=&quot;链接的打开方式&quot;&gt;&lt;/a&gt;</code></p>
+<p>属性：</p>
+<p>href：链接跳转的地址</p>
+<p>地址分类：</p>
+<ul>
+<li>站外跳转，绝对地址跳转，需要添加合法的地址（http/https协议），如：<a href="https://www.baidu.com/">https://www.baidu.com/</a>；此外，也可以是电脑本地文件的绝对地址</li>
+<li>站内跳转，相对地址跳转，从当前文件去找目标文件的过程，两个文件在同一个文件下（同级目录）</li>
+<li>锚点跳转，页面内部跳转：从页面的某一块区域跳转到另外一块区域
+在需要跳转的标签上添加 id=&quot;&quot;，如：<code>&lt;p id=&quot;myId&quot;&gt;&lt;/p&gt;</code>，然后在a标签的href属性中填写自定义的 id 名：<code>&lt;a href=&quot;#myId&quot;&gt;&lt;/a&gt;</code></li>
+</ul>
+<p>target：链接的打开方式</p>
+<ul>
+<li>_self：默认值，覆盖当前页面打开</li>
+<li>_blank：新窗口打开页面，</li>
+</ul>
+<p>说明：根据具体的场景来使用链接打开方式，不可以一味地使用某一种。</p>
+<p>（8）</p>
+<h4 id="23-标签的属性">2.3 标签的属性</h4>
+<p>语法：写在标签内部，如果是双标签，则写在开始标签里面</p>
+<p>格式：属性名=&quot;属性值&quot;</p>
+<p>属性可以多个并存，属性与属性之间使用空格分开</p>
+<pre><code>    &lt;hr color=&quot;red&quot;&gt;
+    &lt;h1 class=&quot;box&quot; style=&quot;width: 200px&quot;&gt;&lt;/h1&gt;
+</code></pre>
+<h4 id="24-路径说明">2.4 路径说明</h4>
+<ul>
+<li><strong>绝对地址</strong>：从盘符、http协议出发去找目标文件的过程</li>
+</ul>
+<pre><code>    &lt;img src=&quot;http://......&quot;&gt;
+    &lt;img src=&quot;c://......&quot;&gt;
+</code></pre>
+<ul>
+<li><strong>相对地址</strong>：从当前文件出发去找目标文件的过程</li>
+</ul>
+<p>（1）同级目录：</p>
+<p><strong>如果当前文件和目标文件在同一个文件的话，路径直接写目标文件的名称即可。
+如果当前文件和目标文件不在同一个文件的话，那么需要先找到目标文件对应的文件夹。</strong></p>
+<p>（2）非同级目录：</p>
+<pre><code>     上一级目录：../   用于跳出当前目录
+     下一级目录：文件夹名/
+</code></pre>
+<h4 id="25-列表">2.5 列表</h4>
+<p>（1）无序列表</p>
+<pre><code>    &lt;ul&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+</code></pre>
+<p>特点：列表之间没有顺序，实际工作中常用</p>
+<p>（2）有序列表</p>
+<pre><code>    &lt;ol&gt;
+        &lt;li&gt;1&lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+    &lt;/ol&gt;
+</code></pre>
+<p>特点：列表之间有顺序，实际工作中不常用</p>
+<p>（3）自定义列表</p>
+<pre><code>    &lt;dl&gt;
+        &lt;dt&gt;帮助中心&lt;/dt&gt;
+        &lt;dd&gt;账户管理&lt;/dd&gt;
+        &lt;dd&gt;购物指南&lt;/dd&gt;
+        &lt;dd&gt;订单操作&lt;/dd&gt;
+    &lt;/dl&gt;
+</code></pre>
+<p>说明：
+ul、ol 的子元素（子标签）必须是 li，li 标签相当于一个容器，可以在 li 中嵌套其他的标签（可以容纳所有标签），包括（ ul、ol ）</p>
+<pre><code>    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;ul&gt;
+                &lt;li&gt;1&lt;/li&gt;
+                &lt;li&gt;2&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;2&lt;/li&gt;
+        &lt;li&gt;3&lt;/li&gt;
+        &lt;li&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+</code></pre>
+<p>ul、ol 中直接输入其他标签或者文字的做法是不被允许的</p>
+<p>dl 中只能嵌套 dt 、dd，直接在 dl 中输入其他标签或者文字的做法也是不被允许的</p>
+<p>dl 、dt 标签相当于一个容器，可以容纳所有元素</p>
+<h4 id="26-注释">2.6 注释</h4>
+<p>不会被浏览器解析，在源代码中显示一段文字，用来提示该段代码的作用</p>
+<p>语法：<code>&lt;!-- 被注释的内容 --&gt;</code></p>
+<p>Windows快捷方式：ctrl + /；Mac OS中快捷方式：command + /</p>
+<p>取消注释快捷方式：ctrl + z 或者 ctrl + /，command + /</p>
+<h4 id="27-特殊字符">2.7 特殊字符</h4>
+<table>
+<thead>
+<tr>
+<th>特殊符号</th>
+<th>格式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;</td>
+<td><code>&amp;lt;</code></td>
+<td>小于号</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td><code>&amp;gt;</code></td>
+<td>大于号</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td><code>&amp;amp;</code></td>
+<td>和号</td>
+</tr>
+<tr>
+<td>￥</td>
+<td><code>&amp;yen;</code></td>
+<td>人民币</td>
+</tr>
+</tbody>
+</table>
+<pre><code>    &lt;p&gt;&lt;/p&gt;
+</code></pre>
+<p><code>&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;</code></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://ZX-Chen.github.io/tag/PFjpiUZ6P" class="tag">
+                    前端学习笔记
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://ZX-Chen.github.io/post/gou-zao-qi-mo-shi">
+                  <h3 class="post-title">
+                    构造器模式
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '6b6f48fc71d8ddc180c8',
+        clientSecret: '7501065c8218addde8eeef67f55bbeb4cabb2a16',
+        repo: 'ZX-Chen.github.io',
+        owner: 'ZX-Chen',
+        admin: ['ZX-Chen'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
