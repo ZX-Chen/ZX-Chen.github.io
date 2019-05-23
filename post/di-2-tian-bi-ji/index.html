@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>第2天笔记 | Gridea</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ZX-Chen.github.io/favicon.ico?v=1558582201458">
+<link rel="stylesheet" href="https://ZX-Chen.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://ZX-Chen.github.io">
+        <img src="https://ZX-Chen.github.io/images/avatar.png?v=1558582201458" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">第2天笔记</h2>
+            <div class="post-date">2019-05-23</div>
+            
+            <div class="post-content">
+              <h3 id="1表格">1.表格</h3>
+<h4 id="11-表格构成">1.1 表格构成</h4>
+<p>表格由行和单元格组成
+行：tr
+单元格：td
+实现一个三行三列的表格</p>
+<pre><code>    &lt;table border=&quot;1&quot;&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;3&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+</code></pre>
+<hr>
+<p>说明：</p>
+<ol>
+<li>表格至少由三个基本标签构成：table、tr、td</li>
+<li>tr必须嵌套在table标签中，td、th 必须嵌套在tr中</li>
+</ol>
+<hr>
+<h4 id="12-表格的属性">1.2 表格的属性</h4>
+<p>（1）设置表格边框的属性</p>
+<ul>
+<li>border：边框</li>
+<li>width：表格宽度</li>
+<li>height：表格高度</li>
+</ul>
+<p>（2）设置单元格与单元格、单元格与边框之间的距离</p>
+<ul>
+<li>cellspacing=&quot;0&quot; 去掉单元格之间的距离</li>
+</ul>
+<p>（3）设置单元格和内容之间的距离，上右下左</p>
+<ul>
+<li>
+<p>cellpadding</p>
+<p><code>cellpadding=&quot;50&quot;</code></p>
+</li>
+</ul>
+<p>（4）表格的对齐方式</p>
+<p>只能将表格居中对齐，不可以将内部的文字进行居中对齐。</p>
+<ul>
+<li>align：left、right、center</li>
+</ul>
+<h4 id="13-表格的表头">1.3 表格的表头</h4>
+<p>一般用在第一行，表示一个列的标题，可以代替 td。</p>
+<p>th 标签更加具有语义化特性，并且会将内部的文字加粗居中。</p>
+<pre><code>  &lt;tr&gt;
+    &lt;th&gt;name&lt;/th&gt;
+    &lt;th&gt;gender&lt;/th&gt;
+    &lt;th&gt;age&lt;/th&gt;
+    &lt;th&gt;progress&lt;/th&gt;
+  &lt;/tr&gt;
+</code></pre>
+<p>为了更好的语义化表达标签的意思，添加 thead、tbody 标签，但不是必须的。</p>
+<ul>
+<li>caption：表格的标题，写在 thead 上面，渲染在表格的顶部外面。工作中不常用。</li>
+<li>thead：表格的头部部分</li>
+<li>tbody：表格的主体部分</li>
+</ul>
+<pre><code>&lt;table&gt;
+  &lt;caption&gt;表格标题&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;th&gt;3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<h4 id="14-合并单元格">1.4 合并单元格</h4>
+<ol>
+<li>跨行合并</li>
+</ol>
+<ul>
+<li>rowspan
+上下合并，写在上面的单元格上，属性值为：合并行的单元格个数
+<code>rowspan=&quot;2&quot;</code>，一旦合并了，那么多余的单元格就需要手动删除。</li>
+</ul>
+<ol start="2">
+<li>跨列合并</li>
+</ol>
+<ul>
+<li>colspan
+左右合并，写在左边的单元格上，属性值为：合并列的单元格个数
+<code>colspan=&quot;2&quot;</code>，一旦合并了，那么多余的单元格就需要手动删除。</li>
+</ul>
+<h3 id="2-表单">2. 表单</h3>
+<p>知识网络图</p>
+<p>作用：用于收集用户的信息发送给后台</p>
+<p>组成：</p>
+<ol>
+<li>表单域（将内部包含的表单信息都收集起来发送给后台）</li>
+<li>提示文本（提示用户当前表单的输入内容）</li>
+<li>表单（真正用来搜集用户信息）</li>
+</ol>
+<p>如图所示：</p>
+<h4 id="21-表单标签">2.1 表单标签</h4>
+<ol>
+<li>input标签</li>
+</ol>
+<p>（1）属性：type，表单的类型</p>
+<ul>
+<li><code>type=&quot;text&quot;</code> 单行文本输入框</li>
+<li><code>type=&quot;password&quot;</code> 密码输入框</li>
+<li><code>type=&quot;radio&quot;</code> 单选框，从多个选择里面选择具体的某一个；若要单选框生效，必须具备相同的 name 属性值</li>
+<li><code>type=&quot;checkbox&quot;</code> 多选框，可选择一个或者多个</li>
+<li><code>type=&quot;file&quot;</code> 上传文件、图片</li>
+<li><code>type=&quot;button&quot;</code> 一般按钮</li>
+<li><code>type=&quot;submit&quot;</code> 提交按钮，用于收集表单数据，然后将数据提交给后台</li>
+</ul>
+<pre><code>    &lt;input type=&quot;submit&quot;&gt;
+</code></pre>
+<p>（2）属性：value，代表表单里面包含的值</p>
+<pre><code>    &lt;input type=&quot;button&quot; value=&quot;按钮&quot;&gt;
+</code></pre>
+<hr>
+<p>说明：
+<code>type=&quot;radio&quot;，type=&quot;checkbox&quot;</code> 做选择的项都需要添加相应的 value 值，用于表单数据的提交</p>
+<pre><code>    &lt;input name=&quot;gender&quot; type=&quot;radio&quot; value=&quot;male&quot; checked=&quot;checked&quot; /&gt;男
+    &lt;input name=&quot;gender&quot; type=&quot;radio&quot; value=&quot;female&quot; /&gt;女
+    &lt;input name=&quot;gender&quot; type=&quot;radio&quot; value=&quot;secret&quot; /&gt;保密
+</code></pre>
+<pre><code>    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;calligraphy&quot; checked /&gt;书法
+    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;badmiton&quot; /&gt;羽毛球
+    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;animation&quot; /&gt;动漫
+    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;reading&quot; /&gt;阅读
+</code></pre>
+<hr>
+<p>（3）属性：checked，用于默认选中，<code>checked=&quot;checked&quot;</code>，可以简写为：checked</p>
+<pre><code>    &lt;input name=&quot;gender&quot; type=&quot;radio&quot; value=&quot;male&quot; checked=&quot;checked&quot;/&gt;男
+    &lt;input type=&quot;checkbox&quot; value=&quot;calligraphy&quot; checked/&gt;书法
+</code></pre>
+<p>（4）属性：placeholder，输入框中的提示信息</p>
+<ol start="2">
+<li>下拉框，select 标签</li>
+</ol>
+<p>（1）属性：selected，指定默认的选中项
+（2）属性：name，控件名称</p>
+<pre><code>&lt;select name=&quot;city&quot;&gt;
+  &lt;option value=&quot;Beijing&quot;&gt;北京&lt;/option&gt;
+  &lt;option value=&quot;Shanghai&quot; selected&gt;上海&lt;/option&gt;
+  &lt;option value=&quot;Guangzhou&quot;&gt;广州&lt;/option&gt;
+  &lt;option value=&quot;Shenzhen&quot;&gt;深圳&lt;/option&gt;
+  &lt;option value=&quot;Hangzhou&quot;&gt;杭州&lt;/option&gt;
+  &lt;option value=&quot;Suzhou&quot;&gt;苏州&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+<ol start="3">
+<li>多行文本输入框标签：textarea，文本域</li>
+</ol>
+<p>（1）属性：cols，文本列的字符数；rows，文本行的字符数。</p>
+<pre><code>    &lt;textarea cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+</code></pre>
+<p>（2）使用场景：多用于留言板，评论（评价）区</p>
+<ol start="4">
+<li>label标签</li>
+</ol>
+<p>作用：用于包裹不同类型的input框，确定一个点击的区域；将文件和表单关联起来，点击文字相当于点击了表单</p>
+<pre><code>  &lt;label&gt;
+    用户名：
+    &lt;input type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;请输入用户名&quot; /&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    密码：
+    &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+  &lt;/label&gt;
+</code></pre>
+<h4 id="3-表单域form-标签">3. 表单域，form 标签</h4>
+<ul>
+<li>作用：收集表单域内部的所有表单信息，整体提交到后台</li>
+<li>使用的标签：form</li>
+<li>提交方式：<code>&lt;input type=&quot;submit&quot; /&gt;</code></li>
+<li>为了保证提交数据的成功：需要在 input（type=&quot;text&quot;；type=&quot;password&quot;； type=&quot;radio&quot;，单选框；type=&quot;checkbox&quot;，多选框；等）、select、textarea 标签中添加 name 属性</li>
+</ul>
+<p>（1）属性：action，提交的后台地址
+（2）属性：method，提交的方法，get、post</p>
+<pre><code>    &lt;form action=&quot;#&quot; method=&quot;get&quot;&gt; xxx &lt;/form&gt;
+</code></pre>
+<h4 id="4-容器标签">4. 容器标签</h4>
+<p>特点：只用于包裹标签，没有明显的语义性，只相当于一个容器</p>
+<ol>
+<li>div</li>
+<li>span</li>
+</ol>
+<h4 id="5-h5html5-新标签及新属性">5. H5（HTML5） 新标签及新属性</h4>
+<ol>
+<li>
+<p>新增的结构标签</p>
+<p>具有语义化，便于搜索引擎的识别；使用方式和 div 一模一样，但是比 div 更具有语义性。</p>
+<p><strong>网页布局常用的标签：</strong></p>
+</li>
+</ol>
+<ul>
+<li>nav，导航栏区域</li>
+<li>header，头部区域</li>
+<li>aside，侧边栏区域</li>
+<li>article，文章页区域</li>
+<li>section，区块区域</li>
+<li>footer，底部区域</li>
+</ul>
+<p>说明：以上标签有兼容问题，如：IE6、7、8不支持</p>
+<ol start="2">
+<li>
+<p>表单新属性</p>
+<p>具有兼容性问题</p>
+</li>
+</ol>
+<p>（1）placeholder，输入框占位文本，提示性信息，告知用户输入文本内容的类型；其值不会被提交到后台。</p>
+<pre><code> &lt;input type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;请输入用户名&quot; /&gt;
+</code></pre>
+<p>（2）autofocus，自动获取焦点，打开网页就会自动聚焦输入框</p>
+<pre><code> &lt;input type=&quot;text&quot; name=&quot;username&quot; autofocus /&gt;
+</code></pre>
+<p>（3）autocomplete，自动补全（前提是该字段必须成功提交过一次），默认值为 on，off-关闭补全</p>
+<pre><code> &lt;input type=&quot;text&quot; name=&quot;username&quot; autocomplete=“on” /&gt;
+</code></pre>
+<p>（4）required，自动验证表单，验证表单不能为空（非空验证）</p>
+<pre><code> &lt;input type=&quot;text&quot; name=&quot;username&quot; required /&gt;
+</code></pre>
+<ol start="3">
+<li>
+<p>新增的表单元素</p>
+<p>input标签：type属性的新值</p>
+</li>
+</ol>
+<ul>
+<li><code>type=&quot;range&quot;</code>，滑块</li>
+<li><code>type=&quot;date&quot;</code>，日期控件，在手机端可以正常使用，但 PC 端有兼容问题。</li>
+<li><code>type=&quot;number&quot;</code>，唤醒数字键盘，可以输入字母 e（科学计数法），其他的字母不被允许输入；手机端会唤醒数字键盘。</li>
+</ul>
+<p>具体的可以查找 MDN ：<a href="https://developer.mozilla.org/zh-CN/">https://developer.mozilla.org/zh-CN/</a></p>
+<ol start="4">
+<li>视频标签</li>
+</ol>
+<ul>
+<li><strong>video</strong>，用于视频的播放</li>
+<li><strong>属性</strong>：</li>
+</ul>
+<p>（1）autoplay，用于自动播放视频
+（2）src，视频地址
+（3）controls，播放控件
+（4）loop，循环播放</p>
+<pre><code> &lt;video src=&quot;#&quot; autoplay loop controls&gt;&lt;/video&gt;
+</code></pre>
+<hr>
+<p>说明：</p>
+<ul>
+<li>好处：方便开发和视频播放，没有广告植入</li>
+<li>弊端：兼容性差</li>
+<li>使用场景：手机端</li>
+</ul>
+<hr>
+<ul>
+<li><strong>播放格式</strong>：mp4、ogg、webm</li>
+<li><strong>由于各个浏览器支持的视频格式不相同，需要进行兼容性的处理</strong></li>
+</ul>
+<p>查找原则：</p>
+<p>从上到下依次查找，若找到当前浏览器识别的格式，则会将视频解析出来；否则，继续往下查找，若所有格式都不支持，则会识别 a 标签并加以提示。目前浏览器对 mp4 格式支持最好。</p>
+<p><strong>注意</strong>：仅仅修改视频的后缀名来实现视频的兼容播放是不可行的，需要借助专业的视频转码工具来更改视频的格式，否则，浏览器是不能播放视频的。</p>
+<pre><code>    &lt;!-- 兼容写法：准备三种不同格式的视频 --&gt;
+    &lt;video&gt;
+      &lt;source src=&quot;media/hello.mp4&quot; /&gt;
+      &lt;source src=&quot;media/hello.ogg&quot; /&gt;
+      &lt;source src=&quot;media/hello.webm&quot; /&gt;
+      &lt;a href=&quot;http://www.baidu.com&quot;&gt;您的浏览器版本过低，请尽快升级！&lt;/a&gt;
+    &lt;/video&gt;
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://ZX-Chen.github.io/tag/PFjpiUZ6P" class="tag">
+                    前端学习笔记
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://ZX-Chen.github.io/post/markdown-jiao-cheng">
+                  <h3 class="post-title">
+                    Markdown教程
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '6b6f48fc71d8ddc180c8',
+        clientSecret: '7501065c8218addde8eeef67f55bbeb4cabb2a16',
+        repo: 'ZX-Chen.github.io',
+        owner: 'ZX-Chen',
+        admin: ['ZX-Chen'],
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
